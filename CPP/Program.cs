@@ -17,8 +17,6 @@ try
     Console.Clear();
     Console.WriteLine($"{testPlan.Name}\n\n{testPlan.TaskDescription}\n");
 
-
-
     bool shouldExit;
     do
     {
