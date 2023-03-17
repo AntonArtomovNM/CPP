@@ -9,13 +9,13 @@ public class Lab1TestPlan
 {
     public string Name => "Lab 1: Робота з текстовою iнформацiєю у .NET";
 
-    public string TaskDescription => "Variant 2:\nНехай надано рядок, що складається зiслiв, вiдокремлених одневiд одного одним i бiльше пропусками. Сформувати новий рядок, що складається зi слiв початкового рядка. У результуючийрядок не включати тi слова, в яких є символи, що повторюються.";
+    public string TaskDescription => "Variant 1:\nНехай надано рядок, що складається зi слiв, вiдокремлених одне вiд одного одним i бiльше пропусками. Видалити в ньому всi слова, що складаються з трьох i менше символiв.";
 
     public void RunDefaultCases()
     {
-        Execute("This is former message see the new one.");
+        Execute("This is an old message see the novel one");
         Console.WriteLine();
-        Execute("Here   you  have     another   one");
+        Execute("Here   you  got     another   one");
     }
 
     public void RunUserInputCases()
@@ -28,7 +28,7 @@ public class Lab1TestPlan
     {
         Console.WriteLine($"Original string: {str}");
 
-        var result = str.RemoveWordsWithRepeatingCharacters();
+        var result = str.RemoveWordsOfMaxLength(3);
 
         Console.WriteLine($"New string: {result}");
     }
