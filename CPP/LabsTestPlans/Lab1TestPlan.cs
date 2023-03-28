@@ -28,7 +28,7 @@ public class Lab1TestPlan
     {
         Console.WriteLine($"Original string: {str}");
 
-        var result = str.RemoveWordsOfMaxLength(3);
+        var result = Lab1Execution.RemoveWordWithLengthOfThreeOrLess(str);
 
         Console.WriteLine($"New string: {result}");
     }

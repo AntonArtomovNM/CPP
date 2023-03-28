@@ -8,6 +8,7 @@ public static class InputHelper
     private static readonly List<ILabTestPlan> _testPlans = new()
     {
         new Lab1TestPlan(),
+        new Lab2TestPlan(),
     };
 
     public static ILabTestPlan GetTestPlan()
@@ -57,5 +58,33 @@ public static class InputHelper
         } while (string.IsNullOrWhiteSpace(result));
 
         return result;
+    }
+
+    public static int[][] GetJaggedArray()
+    {
+        Console.Write("Enter the number of rows: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int[][] jaggedArray = new int[n][];
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"Enter the number of elements in row {i + 1}: ");
+            int m = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            jaggedArray[i] = new int[m];
+
+            for (int j = 0; j < m; j++)
+            {
+                Console.Write($"Enter element {j + 1} in row {i + 1}: ");
+                jaggedArray[i][j] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+        }
+
+        return jaggedArray;
     }
 }
